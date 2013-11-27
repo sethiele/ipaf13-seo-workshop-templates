@@ -1,0 +1,20 @@
+<style>
+	.content img{
+		margin: 10px 10px 10px 0;
+	}
+	
+	div.psy{
+		font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+		font-weight: 500;
+		line-height: 1.1;
+		color: inherit;
+		margin-top: 20px;
+		margin-bottom: 10px;
+		margin: .67em 0;
+		font-size: 36px;
+	}
+	
+	h1.real{
+		font-size: 14px;
+	}
+</style>

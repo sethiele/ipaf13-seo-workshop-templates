@@ -1,0 +1,22 @@
+<npsobj list="children">
+  <npsobj name1="name" value2="^teaser-.*" condition="matches">
+    <npsobj name1="objType" value2="image" condition="isEqual">
+      <div>
+        <npsobj insertvalue="image" name="self" alt="@{ip_alt}" />
+        <small><npsobj insertvalue="var" name="ip_copyright" /></small>
+      </div>
+      
+      <npsobj break />
+    </npsobj>
+  </npsobj>
+</npsobj>
+
+<div class="content">
+  <npsobj insertvalue="var" name="body" />
+</div>
+
+<npsobj name1="ip_socialbuttons" value2="yes" condition="isEqual">
+  <div class="socialmedia well">
+    <npsobj insertvalue="template" name="t_socialmediabuttons" />
+  </div>
+</npsobj>

@@ -1,0 +1,45 @@
+<nav class="navbar navbar-default" role="navigation">
+  <!-- Brand and toggle get grouped for better mobile display -->
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="/">Infopark AG Workshop Page</a>
+  </div>
+
+  <!-- Collect the nav links, forms, and other content for toggling -->
+  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <ul class="nav navbar-nav">
+      
+      <npsobj context = "/">
+        
+        <npsobj list="toclist" sortkey1="ip_sortOrder" sortmodifier1="ascending">
+          <npsobj name1="isMirror" value2="1" condition="isNotEqual">
+            <npsobj name1="ip_showInPrimaryNav" value2="yes" condition="isEqual">
+              
+              <li>
+                <npsobj insertvalue="anchor" name="self">
+                  <npsobj switch="ip_titleNavigation">
+                    <npsobj casecond="isNotEmpty">
+                      <npsobj insertvalue="var" name="ip_titleNavigation" />
+                    </npsobj>
+                    <npsobj casecond="default">
+                      <npsobj insertvalue="var" name="title" />
+                    </npsobj>
+                  </npsobj>
+                </npsobj>
+              </li>
+              
+            </npsobj>
+          </npsobj>
+        </npsobj>
+        
+      </npsobj>
+      
+      
+    </ul>
+  </div><!-- /.navbar-collapse -->
+</nav>

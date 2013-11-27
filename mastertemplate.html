@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=@{exportCharset}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <npsobj insertvalue="template" name="t_meta" />
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.1/css/bootstrap.min.css">
+    <npsobj insertvalue="template" name="style_css" />
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <npsobj insertvalue="template" name="t_navigation_top" />
+    <npsobj insertvalue="template" name="t_breadcrumbs" />
+  
+  
+    <div class="container">
+      <div class="row">
+        <span class="col-md-8">
+          
+          
+          <!-- H1 -->
+          <npsobj switch="ip_h1">
+            <npsobj casecond="isNotEmpty">
+              <h1 class="real"><npsobj insertvalue="var" name="ip_h1" /></h1>
+              <div class="psy"><npsobj insertvalue="var" name="title" /></div>
+            </npsobj>
+            <npsobj casecond="default">
+              <h1><npsobj insertvalue="var" name="title" /></h1>
+            </npsobj>
+          </npsobj>
+          <!-- /H1 -->
+          
+          
+          <npsobj insertvalue="template" name="t_body" />
+        </span>
+        <span class="col-md-4">
+          <npsobj insertvalue="template" name="t_navigation_sidebar" />
+        </span>
+        
+      </div>
+    </div>
+    
+    <npsobj insertvalue="template" name="t_footer" />
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.1/js/bootstrap.min.js"></script>
+  </body>
+</html>

@@ -1,0 +1,26 @@
+<npsobj name="context_path" condition="isEmpty">
+  <npsobj modifyvar="set" varname="context_path">/</npsobj>
+</npsobj>
+
+<npsobj context="@{context_path}">
+  <npsobj list="toclist" sortkey1="ip_sortOrder" sortmodifier1="ascending">
+    <npsobj name1="isMirror" value2="1" condition="isNotEqual">
+      <npsobj name1="objType" value2="generic" condition="isNotEqual">
+        <npsobj name1="ip_notinsitemap" value2="no" condition="isNotEqual">
+      
+          <url>
+            <loc>http://www.domain.de<npsobj insertvalue="var" name="path" /></loc>
+            <lastmod><npsobj insertvalue="var" name="lastChanged" format="rss" /></lastmod>
+            <changefreq>monthly</changefreq>
+            <priority>0.8</priority>
+          </url>
+
+          <npsobj name="toclist" condition="isNotEmpty">
+            <npsobj name="t_xml_element" insertvalue="template" context_path="@{path}" />
+          </npsobj>
+      
+        </npsobj>
+      </npsobj>
+    </npsobj>
+  </npsobj>
+</npsobj>

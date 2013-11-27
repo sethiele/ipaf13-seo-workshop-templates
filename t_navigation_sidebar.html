@@ -1,0 +1,70 @@
+<npsobj name1="path" value2="/" condition="isNotEqual">
+
+  <npsobj modifyvar="set" varname="deep"></npsobj>
+
+  <ul class="nav nav-pills nav-stacked">
+
+    <npsobj list="objectsToRoot" end="1">
+      <npsobj name1="ip_showInSecondaryNav" value2="no" condition="isNotEqual">
+        <npsobj name1="objType" value2="generic" condition="isNotEqual">
+    
+          <npsobj modifyvar="set" varname="deep"><npsobj insertvalue="var" name="deep" />&nbsp;&nbsp;</npsobj>
+    
+          <li>
+            <npsobj insertvalue="anchor" name="self">
+              <npsobj insertvalue="var" name="deep" />
+              <npsobj switch="ip_titleNavigation">
+                <npsobj casecond="isNotEmpty">
+                  <npsobj insertvalue="var" name="ip_titleNavigation" />
+                </npsobj>
+                <npsobj casecond="default">
+                  <npsobj insertvalue="var" name="title" />
+                </npsobj>
+              </npsobj>
+            </npsobj>
+          </li>
+        </npsobj>
+      </npsobj>
+    </npsobj>
+    
+    <li class="active">
+      <npsobj insertvalue="anchor" name="self">
+        <npsobj insertvalue="var" name="deep" />&nbsp;&nbsp;
+        <npsobj switch="ip_titleNavigation">
+          <npsobj casecond="isNotEmpty">
+            <npsobj insertvalue="var" name="ip_titleNavigation" />
+          </npsobj>
+          <npsobj casecond="default">
+            <npsobj insertvalue="var" name="title" />
+          </npsobj>
+        </npsobj>
+      </npsobj>
+    </li>
+  
+    <npsobj list="children">
+      <npsobj name1="ip_showInSecondaryNav" value2="no" condition="isNotEqual">
+        <npsobj name1="objType" value2="generic" condition="isNotEqual">
+          <npsobj name1="objType" value2="image" condition="isNotEqual">
+  
+            <li>
+              <npsobj insertvalue="anchor" name="self">
+                <npsobj insertvalue="var" name="deep" />&nbsp;&nbsp;&nbsp;&nbsp;
+                <npsobj switch="ip_titleNavigation">
+                  <npsobj casecond="isNotEmpty">
+                    <npsobj insertvalue="var" name="ip_titleNavigation" />
+                  </npsobj>
+                  <npsobj casecond="default">
+                    <npsobj insertvalue="var" name="title" />
+                  </npsobj>
+                </npsobj>
+              </npsobj>
+            </li>
+          
+          </npsobj>
+        </npsobj>
+      </npsobj>
+    </npsobj>
+  
+  </ul>
+
+</npsobj>

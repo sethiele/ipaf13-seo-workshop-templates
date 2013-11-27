@@ -1,0 +1,16 @@
+<ol class="breadcrumb">
+  <npsobj list="objectsToRoot">
+    <li>
+      <npsobj insertvalue="anchor" name="self">
+        <npsobj switch="ip_titleBreadcrump">
+          <npsobj casecond="isNotEmpty">
+            <npsobj insertvalue="var" name="ip_titleBreadcrump" />
+          </npsobj>
+          <npsobj casecond="default">
+            <npsobj insertvalue="var" name="title" />
+          </npsobj>
+        </npsobj>
+      </npsobj>
+    </li>
+  </npsobj>
+</ol>

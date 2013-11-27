@@ -1,0 +1,33 @@
+<npsobj name="context_path" condition="isEmpty">
+  <npsobj modifyvar="set" varname="context_path">/</npsobj>
+</npsobj>
+
+<ul>
+  <npsobj context = "@{context_path}">
+    <npsobj list="toclist" sortkey1="ip_sortOrder" sortmodifier1="ascending">
+      <npsobj name1="isMirror" value2="1" condition="isNotEqual">
+        <npsobj name1="objType" value2="generic" condition="isNotEqual">
+          <npsobj name1="ip_notinsitemap" value2="no" condition="isNotEqual">
+            <li>
+            
+              <npsobj insertvalue="anchor" name="self">
+                <npsobj switch="ip_titleNavigation">
+                  <npsobj casecond="isNotEmpty">
+                    <npsobj insertvalue="var" name="ip_titleNavigation" />
+                  </npsobj>
+                  <npsobj casecond="default">
+                    <npsobj insertvalue="var" name="title" />
+                  </npsobj>
+                </npsobj>
+              </npsobj>
+          
+              <npsobj name="toclist" condition="isNotEmpty">
+                <npsobj name="t_sitemaptemplate" insertvalue="template" context_path="@{path}"/>
+              </npsobj>
+            </li>
+          </npsobj>
+        </npsobj>
+      </npsobj>
+    </npsobj>
+  </npsobj>
+</ul>

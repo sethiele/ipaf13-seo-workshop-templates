@@ -1,0 +1,36 @@
+<npsobj switch="ip_googleauthor">
+  <npsobj casecond="isEqual" value="firma">
+    <npsobj modifyvar="set" varname="author">106120773669305881039</npsobj>
+    <npsobj modifyvar="set" varname="author_rel">publisher</npsobj>
+  </npsobj>
+  <npsobj casecond="isEqual" value="nichts">
+
+  </npsobj>
+  <npsobj casecond="default">
+    
+    <npsobj modifyvar="set" varname="author_rel">author</npsobj>
+    
+    <npsobj switch="editor">
+      
+      <!-- Root/Sebastian -->
+      <npsobj casecond="isEqual" value="root">
+        <npsobj modifyvar="set" varname="author">+SebastianThiele</npsobj>
+      </npsobj>
+      
+      <!-- Mustermann -->
+      <npsobj casecond="isEqual" value="mustermann">
+        <npsobj modifyvar="set" varname="author">123456789012345689</npsobj>
+      </npsobj>
+      
+      <npsobj casecond="default">
+        <npsobj modifyvar="set" varname="author">106120773669305881039</npsobj>
+        <npsobj modifyvar="set" varname="author_rel">publisher</npsobj>
+      </npsobj>
+      
+    </npsobj>
+    
+  </npsobj>
+</npsobj>
+
+
+<link href="https://plus.google.com/@{author}" rel="@{author_rel}" />

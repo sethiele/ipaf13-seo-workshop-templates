@@ -1,0 +1,32 @@
+<title>
+  <npsobj switch="ip_titleHeader">
+    <npsobj casecond="isNotEmpty">
+      <npsobj insertvalue="var" name="ip_titleHeader" />
+    </npsobj>
+    <npsobj casecond="default">
+      <npsobj insertvalue="var" name="title" />
+    </npsobj>
+  </npsobj>
+</title>
+
+<!-- robots -->
+<npsobj name1="ip_noindex" value2="no" condition="isNotEqual">
+  <npsobj name="ip_noindex" condition="isNotEmpty">
+    <meta name="robots" content="@{ip_noindex}" />
+  </npsobj>
+</npsobj>
+<!-- /robots -->
+
+<!-- canonical -->
+<npsobj name="ip_canonical" condition="isNotEmpty">
+  <link rel="canonical" href="@{ip_canonical}"/>
+</npsobj>
+<!-- /canonical -->
+
+<!-- description -->
+  <meta name="description" content="@{ip_metaDescription}" />
+<!-- /decription -->
+
+<!-- authorship -->
+  <npsobj insertvalue="template" name="t_authorship" />
+<!-- /authorship --> 
